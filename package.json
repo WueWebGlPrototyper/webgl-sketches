@@ -1,0 +1,52 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "webgl sketches",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  },
+  "scripts": {
+    "all" : "npm run waves",
+    "waves": "budo -p 9012 --title waves waves/waves.js:bundle.js --open --live"
+  },
+  "dependencies": {
+    "browserify": "*",
+    "canvas-fit": "*",
+    "is-mobile": "*",
+    "key-pressed": "0.0.1",
+    "vkey": "^1.0.0",
+    "simplex-noise": "^2.2.0",
+    "gl-buffer": "^2.1.2",
+    "gl-clear": "^2.0.0",
+    "gl-context": "*",
+    "gl-geometry": "*",
+    "gl-matrix": "^2.3.1",
+    "gl-shader": "*",
+    "gl-vao": "^1.2.1",
+    "glslify": "*",
+    "cga": "*",
+    "guf": "*",
+    "lgp": "*",
+    "mda": "*",
+    "mhf": "*",
+    "nsc": "*",
+    "sps": "*",
+    "ycam": "*"
+  },
+  "keywords": [
+    "stackgl",
+    "webgl",
+    "ycam",
+    "design",
+    "computational",
+    "geometry",
+    "algorithms",
+    "digital",
+    "fabrication",
+    "reza ali"
+  ],
+  "license": "MIT"
+}
