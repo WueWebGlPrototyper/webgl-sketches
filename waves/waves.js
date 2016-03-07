@@ -23,6 +23,7 @@ var mat3 = require('gl-matrix').mat3;
 var vec3 = require('gl-matrix').vec3;
 
 // Noise Function
+
 var SimplexNoise = require('simplex-noise');
 var simplex = new SimplexNoise( Math.random );
 
@@ -72,8 +73,8 @@ var pos = [];
 var homes = [];
 var vel = [];
 
-var gridSize = 20;
-var size = 4.0;
+var gridSize = 8;
+var size = 2.0;
 for( var y = 0; y < gridSize; y++ ) {
   for( var x = 0; x < gridSize; x++ ) {
     var ptx = map( x, 0, gridSize - 1, -size, size );
@@ -142,7 +143,7 @@ var normalm3 = mat3.create();
 var model = mat4.create();
 var view = mat4.create();
 
-var color = [ 1.0, 1.0, 1.0, 1.0 ];
+var color = [ 0.5, 0.75, 1.0, 1.0 ];
 var colorPoints = [ 1.0, 1.0, 1.0, 0.5 ];
 var colorWire = [ 1.0, 1.0, 1.0, 0.25 ];
 
@@ -164,7 +165,7 @@ var colorPoints = [ 1.0, 1.0, 1.0, 1.0 ];
 var height;
 var width;
 var frame = 0.0;
-var speed = 0.005;
+var speed = 0.0025;
 
 function update() {
 
@@ -299,12 +300,12 @@ function render() {
 
   vertBuffer.update( pos );
   vao.bind()
-  vao.draw( gl.POINTS, pos.length / 3.0 );
+  //vao.draw( gl.POINTS, pos.length / 3.0 );
   vao.unbind();
 
-  // drawGeo();
+  drawGeo();
   drawGeoPoints();
-  drawGeoWireframe();
+  // drawGeoWireframe();
 };
 
 function drawGeo() {

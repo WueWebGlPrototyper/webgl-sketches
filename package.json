@@ -9,7 +9,8 @@
     ]
   },
   "scripts": {
-    "all" : "npm run waves",
+    "all" : "npm run dynamicdrawing & npm run waves",
+	"dynamicdrawing": "budo -p 9001 --title dynamicdrawing dynamicdrawing/dynamicdrawing.js:bundle.js --open --live",
     "waves": "budo -p 9012 --title waves waves/waves.js:bundle.js --open --live"
   },
   "dependencies": {
